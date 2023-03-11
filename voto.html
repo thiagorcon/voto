@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imc</title>
+</head>
+<body>
+    <h1>Cálculo do IMC</h1>
+    <hr>
+    <form action="">
+        Peso<br/>
+        <input type="text" name="" id="peso"/>
+        <br/><br/>
+        Altura<br/>
+        <input type="text" name="" id="altura"/>
+        <br><br/>
+        <button onclick="calcular();return false;">Calcular</button>
+        <br><br/>
+        <div id="resposta">  </div>
+    </form>
+</body>
+</html>
+<script>
+    function calcular(){
+        
+        var pesoj = parseFloat(document.getElementById("peso").value);
+        //  alert("Peguei o peso que é "+pesoj);
+        var alturaj = parseFloat(document.getElementById("altura").value);
+        // alert("Peguei a altura   "+ alturaj);
+
+        var calculo = (pesoj / (alturaj * alturaj)); 
+        // alert(" O valor do imc é "+ calculo);
+        
+        if (calculo < 20) {
+            var respostaj = "abaixo do peso";
+            resposta.innerHTML = respostaj;
+
+        } else if(calculo >= 20 && calculo < 25) {
+            var respostaj = "peso normal";
+            resposta.innerHTML = respostaj;
+        }else if(calculo >=25 && calculo < 30) {
+            var respostaj = "Sobre peso";
+            resposta.innerHTML = respostaj;
+        }else if(calculo >=30 && calculo <40) {
+            var respostaj = "Obeso";
+            resposta.innerHTML = respostaj;
+         }else{
+            var respostaj = "Obeso Mórbido";
+            resposta.innerHTML = respostaj;
+         }
+        }
+</script>
